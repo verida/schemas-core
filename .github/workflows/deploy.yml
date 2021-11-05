@@ -38,5 +38,5 @@ jobs:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_USERNAME: Schema Deployment
         SLACK_ICON: https://assets.verida.io/s3.png
-        SLACK_TITLE: Deployment of $GITHUB_REPOSITORY schemas complete
-        SLACK_FOOTER: Generated on merge to $GITHUB_REPOSITORY
+        SLACK_TITLE: Deployment of ${{ env.GITHUB_REPOSITORY}} schemas complete
+        SLACK_FOOTER: Generated on merge to ${{ env.GITHUB_REPOSITORY}}
