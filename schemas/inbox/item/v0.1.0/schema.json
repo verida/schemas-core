@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://core.schemas.verida.io/inbox/item/v0.1.0/schema.json",
+  "title": "Encrypted Inbox Message",
+  "description": "An unprocessed, encrypted inbox item in a users public inbox",
+  "type": "object",
+  "color": "#FD4F64",
+  "database": {
+    "name": "inbox_item"
+  },
+  "properties": {
+    "content": {
+      "title": "Content",
+      "type": "string"
+    },
+    "key": {
+      "title": "Public key",
+      "type": "string"
+    }
+  },
+  "required": [
+    "content",
+    "key"
+  ]
+}

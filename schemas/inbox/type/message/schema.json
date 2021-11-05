@@ -1,0 +1,37 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://core.schemas.verida.io/inbox/type/message/v0.1.0/schema.json",
+    "title": "Generic Inbox Message",
+    "description": "Inbox message",
+    "type": "object",
+    "properties": {
+        "subject": {
+            "title": "Subject",
+            "type": "string"
+        },
+        "message": {
+            "title": "Message",
+            "type": "string"
+        },
+        "link": {
+            "type": "object",
+            "description": "Optional link that user can click on for more information",
+            "properties": {
+                "url": {
+                    "title": "URL",
+                    "type": "string"
+                },
+                "text": {
+                    "title": "Text",
+                    "type": "string"
+                }
+            }
+        },
+        "replyId": {
+            "title": "Reply ID",
+            "type": "string",
+            "description": "ID of an inbox message this is responding to"
+        }
+    },
+    "required": ["subject", "message"]
+}

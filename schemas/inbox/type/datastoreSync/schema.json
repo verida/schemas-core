@@ -1,0 +1,56 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://core.schemas.verida.io/inbox/type/datastoreSync/v0.1.0/schema.json",
+    "title": "Datastore Syncronization",
+    "description": "An inbox message requesting the syncronization of data from a source datastore to a destination datastore",
+    "type": "object",
+    "properties": {
+        "schema": {
+            "title": "Datastore schema to sync",
+            "description": "URI of the database to sync to",
+            "type": "string"
+        },
+        "externalDs": {
+            "did": {
+                "title": "Destination DID",
+                "description": "DID of the database owner",
+                "type": "string"
+            },
+            "context": {
+                "title": "Destination context name",
+                "description": "Name of the context to sync to",
+                "type": "string"
+            },
+            "encryptionKey": {
+                "$ref": "https://core.schemas.verida.io/security/key/symmetric/v0.1.0/schema.json"
+            },
+            "dbName": {
+                "title": "External database",
+                "description": "Specify the database name (if not datastore default)",
+                "type": "string"
+            }
+        },
+        "filter": {
+            "title": "Filter",
+            "description": "Database filter the data must match",
+            "type": "object",
+            "default": {}
+        },
+        "direction": {
+            "title": "Sync direction",
+            "type": "string",
+            "enum": ["pull", "push", "both"]
+        },
+        "status": {
+            "title": "Status",
+            "type": "string",
+            "enum": ["accept", "reject"]
+        }
+    },
+    "required": [
+        "schema",
+        "externalDs.did",
+        "externalDs.appName",
+        "externalDs.encryptionKey"
+    ]
+  }

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://core.schemas.verida.io/inbox/type/dataSend/v0.1.0/schema.json",
+    "title": "Data Send",
+    "description": "An inbox message sending data to a user",
+    "type": "object",
+    "properties": {
+        "data": {
+            "title": "Data",
+            "description": "Array of data being sent. Must be valid schema data.",
+            "type": "array"
+        },
+        "status": {
+            "title": "Status",
+            "type": "string",
+            "enum": ["accept", "reject"]
+        },
+        "replyId": {
+            "title": "Reply ID",
+            "type": "string",
+            "description": "ID of a dataRequest inbox message this is responding to"
+        }
+    },
+    "required": ["data", "status"]
+  }
