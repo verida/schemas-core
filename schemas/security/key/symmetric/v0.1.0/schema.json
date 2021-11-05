@@ -1,0 +1,20 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://core.schemas.verida.io/security/key/symmetric/v0.1.0/schema.json",
+    "title": "Symmetric Key",
+    "description": "A symmetric key",
+    "type": "object",
+    "properties": {
+        "key": {
+            "title": "Key",
+            "description": "Symmetric encryption key as a hex string",
+            "type": "string"
+        },
+        "type": {
+            "title": "Type",
+            "description": "Type of symmetric encryption key",
+            "type": "string"
+        }
+    },
+    "required": ["key", "type"]
+  }
