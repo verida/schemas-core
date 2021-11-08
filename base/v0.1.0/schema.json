@@ -4,6 +4,11 @@
     "title": "Base schema",
     "description": "A base schema",
     "type": "object",
+    "database": {
+        "indexes": {
+            "schema": ["schema"]
+        }
+    },
     "appearance": {
         "style": {
             "color": "#f2f2f2",
@@ -31,20 +36,8 @@
         },
         "schema": {
             "title": "Schema",
-            "description": "Schema used for this record",
-            "type": "object",
-            "properties": {
-                "type": {
-                    "title": "Schema type",
-                    "type": "string"
-                },
-                "version": {
-                    "title": "Schema version",
-                    "description": "Version of the schema. Leave blank for latest.",
-                    "type": "string"
-                }
-            },
-            "required": ["type"]
+            "description": "URI of the schema for this record",
+            "type": "string"
         },
         "signatures": {
             "title": "Signatures",
