@@ -8,9 +8,11 @@
     "title": "A vocabulary for Verida schema meta-data",
     "type": ["object", "boolean"],
     "properties": {
+        "titlePlural": { "type": "string" },
         "database": { "$ref": "#/$defs/database" },
         "appearance": { "$ref": "#/$defs/appearance" },
-        "color": { "$ref": "#/$defs/color" }
+        "color": { "$ref": "#/$defs/color" },
+        "layouts": { "$ref": "#/$defs/layouts" }
     },
 
     "$defs": {
@@ -18,6 +20,7 @@
             "type": "object",
             "properties": {
                 "name": { "type": "string" },
+                "idFormat": { "type": "string" },
                 "indexes": {
                     "type": "object",
                     "properties": {
@@ -26,6 +29,26 @@
                             "items": { "type": "string" }
                         },
                         "sentAt": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                        },
+                        "location": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                        },
+                        "timestamp": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                        },
+                        "email": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                        },
+                        "did": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                        },
+                        "name": {
                             "type": "array",
                             "items": { "type": "string" }
                         }
@@ -59,6 +82,25 @@
         "color": {
             "type": "string",
             "pattern": "^#[a-fA-F0-9]{6}"
+        },
+
+        "layouts": {
+            "type": "object",
+            "properties": {
+                "create": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                },
+                "view": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                },
+                "list": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                }
+            },
+            "unevaluatedProperties": false
         }
     }
 }
