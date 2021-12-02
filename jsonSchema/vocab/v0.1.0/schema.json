@@ -60,11 +60,9 @@
                             "type": "array",
                             "items": { "type": "string" }
                         }
-                    },
-                    "unevaluatedProperties": false
+                    }
                 }
-            },
-            "unevaluatedProperties": false
+            }
         },
 
         "appearance": {
@@ -78,13 +76,11 @@
                             "type": "string",
                             "format": "uri"
                         }
-                    },
-                    "unevaluatedProperties": false
+                    }
                 },
                 "nameField": { "type": "string" },
                 "summaryField": { "type": "string" }
-            },
-            "unevaluatedProperties": false
+            }
         },
 
         "color": {
@@ -107,8 +103,7 @@
                     "type": "array",
                     "items": { "type": "string" }
                 }
-            },
-            "unevaluatedProperties": false
+            }
         }
     }
 }
