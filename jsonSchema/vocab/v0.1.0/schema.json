@@ -51,6 +51,14 @@
                         "name": {
                             "type": "array",
                             "items": { "type": "string" }
+                        },
+                        "context": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                        },
+                        "insertedAt": {
+                            "type": "array",
+                            "items": { "type": "string" }
                         }
                     },
                     "unevaluatedProperties": false
