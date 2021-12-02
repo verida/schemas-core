@@ -1,0 +1,64 @@
+{
+    "$id": "https://core.schemas.verida.io/jsonSchema/vocab/v0.1.0/schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$vocabulary": {
+        "https://core.schemas.verida.io/jsonSchema/vocab/v0.1.0/schema": true
+    },
+
+    "title": "A vocabulary for Verida schema meta-data",
+    "type": ["object", "boolean"],
+    "properties": {
+        "database": { "$ref": "#/$defs/database" },
+        "appearance": { "$ref": "#/$defs/appearance" },
+        "color": { "$ref": "#/$defs/color" }
+    },
+
+    "$defs": {
+        "database": {
+            "type": "object",
+            "properties": {
+                "name": { "type": "string" },
+                "indexes": {
+                    "type": "object",
+                    "properties": {
+                        "schema": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                        },
+                        "sentAt": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                        }
+                    },
+                    "unevaluatedProperties": false
+                }
+            },
+            "unevaluatedProperties": false
+        },
+
+        "appearance": {
+            "type": "object",
+            "properties": {
+                "style": {
+                    "type": "object",
+                    "properties": {
+                        "color": { "ref": "#/$defs/color" },
+                        "icon": {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    },
+                    "unevaluatedProperties": false
+                },
+                "nameField": { "type": "string" },
+                "summaryField": { "type": "string" }
+            },
+            "unevaluatedProperties": false
+        },
+
+        "color": {
+            "type": "string",
+            "pattern": "^#[a-fA-F0-9]{6}"
+        }
+    }
+}
