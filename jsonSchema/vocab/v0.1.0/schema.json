@@ -5,7 +5,7 @@
         "https://core.schemas.verida.io/jsonSchema/vocab/v0.1.0/schema": true
     },
 
-    "title": "A vocabulary for Verida schema meta-data",
+    "title": "Verida JSON Schema vocabulary",
     "type": ["object", "boolean"],
     "properties": {
         "titlePlural": { "type": "string" },
@@ -24,42 +24,15 @@
                 "indexes": {
                     "type": "object",
                     "properties": {
-                        "schema": {
-                            "type": "array",
-                            "items": { "type": "string" }
-                        },
-                        "sentAt": {
-                            "type": "array",
-                            "items": { "type": "string" }
-                        },
-                        "location": {
-                            "type": "array",
-                            "items": { "type": "string" }
-                        },
-                        "timestamp": {
-                            "type": "array",
-                            "items": { "type": "string" }
-                        },
-                        "email": {
-                            "type": "array",
-                            "items": { "type": "string" }
-                        },
-                        "did": {
-                            "type": "array",
-                            "items": { "type": "string" }
-                        },
-                        "name": {
-                            "type": "array",
-                            "items": { "type": "string" }
-                        },
-                        "context": {
-                            "type": "array",
-                            "items": { "type": "string" }
-                        },
-                        "insertedAt": {
-                            "type": "array",
-                            "items": { "type": "string" }
-                        }
+                        "schema": { "$ref": "#/$defs/string-array" },
+                        "sentAt": { "$ref": "#/$defs/string-array" },
+                        "location": { "$ref": "#/$defs/string-array" },
+                        "timestamp": { "$ref": "#/$defs/string-array" },
+                        "email": { "$ref": "#/$defs/string-array" },
+                        "did": { "$ref": "#/$defs/string-array" },
+                        "name": { "$ref": "#/$defs/string-array" },
+                        "context": { "$ref": "#/$defs/string-array" },
+                        "insertedAt": { "$ref": "#/$defs/string-array" }
                     }
                 }
             }
@@ -91,19 +64,15 @@
         "layouts": {
             "type": "object",
             "properties": {
-                "create": {
-                    "type": "array",
-                    "items": { "type": "string" }
-                },
-                "view": {
-                    "type": "array",
-                    "items": { "type": "string" }
-                },
-                "list": {
-                    "type": "array",
-                    "items": { "type": "string" }
-                }
+                "create": { "$ref": "#/$defs/string-array" },
+                "view": { "$ref": "#/$defs/string-array" },
+                "list": { "$ref": "#/$defs/string-array" }
             }
+        },
+
+        "string-array": {
+          "type": "array",
+          "items": { "type": "string" }
         }
     }
 }

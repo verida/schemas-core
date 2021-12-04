@@ -29,7 +29,11 @@ describe("Core Verida Schemas", () => {
     it(`Validating schema: ${schemaId}`, async () => {
       const schema = await JsonSchema.get(schemaId);
       try {
+        // When we compile the schema, it validates the schema against the meta-schema
         const validate = await JsonSchema.validate(schema);
+        // Normally we would then use the "validate" function generated here to
+        // validate data against the schema, but in this case all we needed was
+        // meta-schema validation, so we're done.
       } catch (error) {
         if (error instanceof JsonSchema.InvalidSchemaError) {
           expect.fail(JSON.stringify(error.output, null, "  "));
