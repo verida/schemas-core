@@ -33,6 +33,10 @@
                 "sent": {
                     "title": "Sent?",
                     "type": "boolean"
+                },
+                "openUrl": {
+                    "title": "URL to open after message is accepted",
+                    "type": "string"
                 }
             },
             "required": ["type", "data", "message", "sentTo"]
