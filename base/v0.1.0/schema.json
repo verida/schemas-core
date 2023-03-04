@@ -27,7 +27,7 @@
             "title": "Summary",
             "description": "Brief summary of item",
             "type": "string",
-            "maxLength": 100
+            "maxLength": 256
         },
         "archived": {
             "title": "Archived",
