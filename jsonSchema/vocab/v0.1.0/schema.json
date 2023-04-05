@@ -1,0 +1,78 @@
+{
+    "$id": "https://core.schemas.verida.io/jsonSchema/vocab/v0.1.0/schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$vocabulary": {
+        "https://core.schemas.verida.io/jsonSchema/vocab/v0.1.0/schema": true
+    },
+
+    "title": "Verida JSON Schema vocabulary",
+    "type": ["object", "boolean"],
+    "properties": {
+        "titlePlural": { "type": "string" },
+        "database": { "$ref": "#/$defs/database" },
+        "appearance": { "$ref": "#/$defs/appearance" },
+        "color": { "$ref": "#/$defs/color" },
+        "layouts": { "$ref": "#/$defs/layouts" }
+    },
+
+    "$defs": {
+        "database": {
+            "type": "object",
+            "properties": {
+                "name": { "type": "string" },
+                "idFormat": { "type": "string" },
+                "indexes": {
+                    "type": "object",
+                    "properties": {
+                        "schema": { "$ref": "#/$defs/string-array" },
+                        "sentAt": { "$ref": "#/$defs/string-array" },
+                        "location": { "$ref": "#/$defs/string-array" },
+                        "timestamp": { "$ref": "#/$defs/string-array" },
+                        "email": { "$ref": "#/$defs/string-array" },
+                        "did": { "$ref": "#/$defs/string-array" },
+                        "name": { "$ref": "#/$defs/string-array" },
+                        "context": { "$ref": "#/$defs/string-array" },
+                        "insertedAt": { "$ref": "#/$defs/string-array" }
+                    }
+                }
+            }
+        },
+
+        "appearance": {
+            "type": "object",
+            "properties": {
+                "style": {
+                    "type": "object",
+                    "properties": {
+                        "color": { "ref": "#/$defs/color" },
+                        "icon": {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    }
+                },
+                "nameField": { "type": "string" },
+                "summaryField": { "type": "string" }
+            }
+        },
+
+        "color": {
+            "type": "string",
+            "pattern": "^#[a-fA-F0-9]{6}"
+        },
+
+        "layouts": {
+            "type": "object",
+            "properties": {
+                "create": { "$ref": "#/$defs/string-array" },
+                "view": { "$ref": "#/$defs/string-array" },
+                "list": { "$ref": "#/$defs/string-array" }
+            }
+        },
+
+        "string-array": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+    }
+}

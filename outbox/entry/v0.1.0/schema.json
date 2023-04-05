@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "https://core.schemas.verida.io/jsonSchema/dialect/v0.1.0/schema.json",
     "$id": "https://core.schemas.verida.io/outbox/entry/v0.1.0/schema.json",
     "title": "Outbox Entry",
     "description": "Outbox Message",
