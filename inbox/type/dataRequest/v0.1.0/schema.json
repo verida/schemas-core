@@ -26,6 +26,24 @@
             "description": "Limit the number of data records the user can return. Limit is optional.",
             "type": "integer"
         },
+        "fallbackAction": {
+            "title": "Fallback Action",
+            "description": "An action suggested to the user if they don't have the requested data",
+            "type": "object",
+            "properties": {
+                "label": {
+                    "title": "Label",
+                    "description": "Label of the action",
+                    "type": "string"
+                },
+                "url": {
+                    "title": "URL",
+                    "description": "The user will be redirected to this URL if they decide to use this suggested fallback action",
+                    "type": "string"
+                }
+            },
+            "required": ["label", "url"]
+        },
         "status": {
             "title": "Status",
             "type": "string",
