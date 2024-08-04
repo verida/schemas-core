@@ -49,6 +49,21 @@
             "description": "Name of the application this data was sourced from",
             "type": "string"
         },
+        "sourceAccountId": {
+            "title": "Source Account ID",
+            "description": "ID of the account from the original data source",
+            "type": "object"
+        },
+        "sourceId": {
+            "title": "Source ID",
+            "description": "ID from the original data source",
+            "type": "object"
+        },
+        "sourceData": {
+            "title": "Source data",
+            "description": "Raw data from the original source",
+            "type": "object"
+        },
         "icon": {
             "title": "Icon",
             "description": "URL of an icon for this record. Must be square, prefer SVG, otherwise minimum 50p x 50p",
