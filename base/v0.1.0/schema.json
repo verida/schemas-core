@@ -52,12 +52,12 @@
         "sourceAccountId": {
             "title": "Source Account ID",
             "description": "ID of the account from the original data source",
-            "type": "object"
+            "type": "string"
         },
         "sourceId": {
             "title": "Source ID",
             "description": "ID from the original data source",
-            "type": "object"
+            "type": "string"
         },
         "sourceData": {
             "title": "Source data",
